@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 7 - Question 2: Cafe Bill</title>
+    <style>
+        body { font-family: Arial, sans-serif; font-size: 20px; }
+    </style>
+</head>
+<body>
+
+<script type="text/javascript">
+    var choice = prompt("Please enter your choice\n1. Nescafe\n2. Pizza\n3. Yogurt");
+
+    choice = parseInt(choice);
+
+    if (choice !== 1 && choice !== 2 && choice !== 3) {
+        alert("Invalid Choice. Program will terminate.");
+        document.write("<h3>Program Terminated due to invalid choice.</h3>");
+    }
+    else {
+        var price = 0;
+        var quantity = 0;
+        var itemName = "";
+
+        switch (choice) {
+            case 1:
+                price = 2.30;
+                quantity = parseInt(prompt("Please enter the quantity of Nescafe (cans):"));
+                itemName = "Nescafe";
+                break;
+            case 2:
+                price = 7.90;
+                quantity = parseInt(prompt("Please enter the quantity of pizza (pieces):"));
+                itemName = "Pizza";
+                break;
+            case 3:
+                price = 1.85;
+                quantity = parseInt(prompt("Please enter the quantity of Yogurt (cups):"));
+                itemName = "Yogurt";
+                break;
+        }
+
+        var totalBill = price * quantity;
+
+        document.write("<strong>Bill = RM " + totalBill.toFixed(2) + "</strong>");
+    }
+</script>
+
+</body>
+</html>

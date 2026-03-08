@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Sign-Up</title>
+    </head>
+
+    <body>
+        <h4>Register for a new account</h4>
+        <form method="post" action="signup.php">
+                <p>
+                    <label>Name: </label>
+                    <input type="text" placeholder="Type your name here" size="50" maxlength="55" />
+                </p>
+                <p>
+                    <label>Password: </label>
+                    <input type="password">
+                </p>
+                <p>
+                    <label>Email: </label>
+                    <input type="email">
+                </p>
+                <p>
+                    <label>Account Type : </label>
+                    <input type="radio" name="acc_type" id="Member">
+                    <label for="Member">Member</label>
+                    <input type="radio" name="acc_type" id="Retailer">
+                    <label for="Retailer">Retailer</label>
+                </p>
+                <p>
+                    <label for="">If your are a Retailer, describe your business :</label>
+                    <br>
+                    <textarea name="Descriptions" id="Descriptions" rows="4" cols="60" placeholder="Write your descriptions here..."></textarea>
+                </p>
+                <p>
+                    <label for="">Your Birthday : </label>
+                    <input type="date" id="dateInput" placeholder="dd/mm/yyyy">
+                </p>
+                <p>
+                    <label for="">How did you hear about us?</label>
+                    <input type="checkbox" name="how" id="se">
+                    <label for="se">Search Engine</label>
+                    <input type="checkbox" name="how" id="fb">
+                    <label for="fb">Facebook</label>
+                    <input type="checkbox" name="how" id="frend">
+                    <label for="frend">Friends</label>
+                    <input type="checkbox" name="how" id="others">
+                    <label for="others">Others</label>
+                </p>
+                <p>
+                    <input type="submit" name="" value="SIGN UP" id="">
+                </p>
+        </form>
+        
+    </body>
+</html>

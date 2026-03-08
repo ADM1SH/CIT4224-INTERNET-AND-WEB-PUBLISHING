@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Add New Product Details</title>
+    </head>
+    
+    <body>
+        <form action="">
+            <fieldset>
+                <legend>Product Details</legend>
+                <label for="productname">Product Name :</label>
+                <br>
+                <input type="text" name="productname" size="50" required>
+                <br>
+                <br>
+                <label for="productcode">Product Code :</label>
+                <input type="text" name="productcode" id="productcode" size="20">
+                <br>
+                <br>
+                <label for="sizes">Available Sizes :</label>   
+                <input type="radio" id="small" name="wow">
+                <label for="small">Small</label>
+                <input type="radio" id="medium" name="wow">
+                <label for="medium">Medium</label>
+                <input type="radio" id="large" name="wow">
+                <label for="large">Large</label>
+
+                <br>
+                <br>
+
+                <label for="Colour">Colour :</label>
+                <input type="color" name="Colour" id="Colour" value="#123ABC">
+
+                <br>
+                <br>
+
+                <label for="stock">Stock :</label>
+                <input type="text" name="stock" id="stock" min="10" max="120">
+
+                <br>
+                <br>
+
+                <label for="reorder">Re-order Level :</label>
+                <input type="range" name="reorder" id="reorder" min="20" max="100">
+
+                <br>
+                <br>
+
+                <label for="img">Product Image :</label>
+                <input type="file" name="img" id="img">
+
+            </fieldset>
+            <input type="submit" value="Save Product">
+        </form>
+    </body>
+</html>

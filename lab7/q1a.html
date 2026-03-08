@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 7 - Question 1a: Trapezoid Area</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <script type="text/javascript">
+        var b1 = parseFloat(prompt("Please enter the value of base 1 :"));
+        var b2 = parseFloat(prompt("Please enter the value of base 2 :"));
+        var h = parseFloat(prompt("Please enter the value of height :"));
+
+        var sumBases = b1 + b2;
+        var halfHeight = 0.5 * h;
+        var area = 0.5 * h * sumBases;
+
+        document.write("<strong>Trapezoid</strong><br>");
+        document.write("Area = &frac12; h (b1 + b2)<br>");
+
+        document.write("= 1/2 x " + h + " (" + b1 + "+" + b2 + ")<br>");
+
+        document.write("= " + halfHeight + " x " + sumBases + "<br>");
+
+        document.write("= " + area + " cm<sup>2</sup><br><br>");
+
+        document.write("The area of the trapezoid is " + area.toFixed(2) + " cm<sup>2</sup>.");
+    </script>
+
+</body>
+</html>

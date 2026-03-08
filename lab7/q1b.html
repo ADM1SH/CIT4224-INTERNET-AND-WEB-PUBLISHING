@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 7 - Question 1b: Trapezoid Loop</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        table { border-collapse: collapse; width: 50%; margin-bottom: 20px; }
+        th, td { border: 1px solid black; padding: 8px; text-align: center; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+
+<script type="text/javascript">
+    var continueLoop;
+    var count = 0;
+    var totalArea = 0;
+
+    var tableRows = "";
+    var areaSummary = "";
+
+    do {
+        count++;
+
+        var b1 = parseFloat(prompt("Trapezoid " + count + ": Please enter the value of base 1:"));
+        var b2 = parseFloat(prompt("Trapezoid " + count + ": Please enter the value of base 2:"));
+        var h = parseFloat(prompt("Trapezoid " + count + ": Please enter the value of height:"));
+
+        var area = 0.5 * h * (b1 + b2);
+        totalArea += area;
+
+        tableRows += "<tr>";
+        tableRows += "<td>" + b1 + "</td>";
+        tableRows += "<td>" + b2 + "</td>";
+        tableRows += "<td>" + h + "</td>";
+        tableRows += "</tr>";
+
+        areaSummary += "The area of the trapezoid " + count + " is " + area.toFixed(2) + " cm<sup>2</sup><br>";
+
+        continueLoop = confirm("Do you want to continue?");
+
+    } while (continueLoop);
+
+    document.write("<h3>The values entered were:</h3>");
+    document.write("<table>");
+    document.write("<tr><th>Base 1</th><th>Base 2</th><th>Height</th></tr>");
+    document.write(tableRows);
+    document.write("</table>");
+
+    document.write("<h3>The output on the browser:</h3>");
+    document.write(areaSummary);
+
+    document.write("<br><strong>The total area for " + count + " trapezoids is " + totalArea.toFixed(2) + " cm<sup>2</sup></strong>");
+
+</script>
+
+</body>
+</html>

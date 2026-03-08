@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>JS FORMS</title>
+ 
+<script type="text/javascript">
+
+function check()
+{
+	
+	
+}
+
+function get_bill(qty, product_name, product_price)
+{
+	
+}
+
+
+
+</script> 
+
+
+
+</head>
+
+<body>
+
+<form name = "orderfrm" >
+
+	<p>Quantity : 	<input type="text" name="qty" size="10" />
+	<br><span id="qty-display">&nbsp;</span>
+	</p>	
+	
+	<p>Operation : 	<select name="product_code" >
+						<option value="0">Choose an item</option>
+						<option value="1">Pen</option>
+						<option value="2">Eraser</option>
+						<option value="3">Ruler</option>
+					</select>
+		<br><span id="price-display">&nbsp;</span>
+	</p>
+
+	<p><input type="button" value="Get Bill" name="calcbtn" onclick = "check()" /></p>
+	
+</form>
+
+<p id="bill">&nbsp;</p>
+
+</body>
+
+</html>

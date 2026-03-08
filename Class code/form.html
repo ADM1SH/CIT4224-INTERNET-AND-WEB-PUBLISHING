@@ -1,0 +1,45 @@
+<form action="/register" method="post" enctype="multipart/form-data">
+
+  <fieldset>
+    <legend>Personal Information</legend>
+
+    <label for="fullname">Full Name:</label>
+    <input type="text" id="fullname" name="fullname" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label>Gender:</label>
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">Male</label>
+
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Preferences</legend>
+
+    <label for="country">Country:</label>
+    <select id="country" name="country">
+      <option value="my">Malaysia</option>
+      <option value="sg">Singapore</option>
+      <option value="id">Indonesia</option>
+    </select>
+
+    <label>Hobbies:</label>
+    <input type="checkbox" id="reading" name="hobby" value="reading">
+    <label for="reading">Reading</label>
+
+    <input type="checkbox" id="gaming" name="hobby" value="gaming">
+    <label for="gaming">Gaming</label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Upload</legend>
+    <label for="photo">Upload profile photo:</label>
+    <input type="file" name="photo" id="photo">
+  </fieldset>
+
+  <button type="submit">Register</button>
+</form>

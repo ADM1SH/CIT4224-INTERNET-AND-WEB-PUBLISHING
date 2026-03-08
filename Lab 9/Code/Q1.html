@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>JS FORMS</title>
+ 
+<script type="text/javascript">
+
+function validate()
+{
+	let num1, num2, operation, num1_check=0, num2_check=0, opt_check=0;
+	num1 = parseInt(document.mathfrm.num1.value);
+	num2 = parseInt(document.mathfrm.num2.value);
+	operation = document.mathfrm.mathopt.value;
+	
+	if(num1==""||isNaN(num1))//if user key in empty or incorrect value
+	{
+		document.getElementById("err_num1").innerHTML="Please enter orrect number";
+	}
+	else//if user key in valid value
+	{
+		document.getElementById("err_num1").innerHTML="";
+		num1_check=1;
+	}
+	if(num2==""||isNaN(num2))//if user key in empty or incorrect value
+	{
+		document.getElementById("err_num2").innerHTML="Please entter correct number";
+	}
+	else//if user key in valid value
+	{
+		document.getElementById("err_num2").innerHTML="";
+		num2_check = 1;
+	}
+	if(operation=="")//if user does not tick the operation
+	{
+		document.getElementById("err_opt").innerHTML="Pleae choose an operation";
+	}
+	else//if user choose the operation
+	{
+		document.getElementById("err_opt").innerHTML="";
+		opt_check = 1;
+	}
+	if(num1_check ==1&&num2_check ==1&&opt_check==1)//if all values are valid
+	{
+		calculate(num1, num2, operation );//call function calculate and pass all the arguments
+	}
+}
+function calculate(number1, number2, mopt)
+{
+	let total,symbol;
+	switch(mopt)
+	{
+		case '+' : total = number1 + number2;symbol = "+";break;
+		case "-": total = number1 - number2;symbol = "-";break;
+		case '*' : total = number1 * number2;symbol = "*";break;
+	}
+	document.getElementById('result').innerHTML = 
+	number1 + symbol + number2 + "=" + total;
+}
+</script> 
+
+
+
+</head>
+
+<body>
+
+<form name = "mathfrm" >
+
+	<p>Number 1 : 	<input type="text" name="num1" size="20" />
+	<br><span id="err_num1" style="font-size:0.8em; color:red">&nbsp;</span>
+	</p>	
+	
+	<p>Number 2 : <input type="text" name="num2" size="20" />
+	<br><span id="err_num2" style="font-size:0.8em; color:red">&nbsp;</span>
+	</p>
+	
+	<p>Operation : 	<input type="radio" name="mathopt" value="+" /> +
+					<input type="radio" name="mathopt" value="-" /> -
+					<input type="radio" name="mathopt" value="*" /> &times;
+		<br><span id="err_opt" style="font-size:0.8em; color:red">&nbsp;</span>
+	</p>
+
+	<p><input type="button" value="Calculate" name="calcbtn" onclick = "validate();" /></p>
+	
+</form>
+
+<p id="result">&nbsp;</p>
+
+</body>
+
+</html>

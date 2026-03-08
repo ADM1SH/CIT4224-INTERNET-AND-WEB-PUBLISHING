@@ -1,0 +1,45 @@
+body {
+    background-image: url(image/background.jpg);
+    background-size: 200px 200px;
+}
+@font-face {
+    font-family: "GenghisKhanframed-MedObliq";
+    src: url(font/GenghisKhanframed-MedObliq.ttf) format("truetype");
+}
+@font-face {
+    font-family: "The Blacklist";
+    src: url(font/TheBlacklist.ttf) format("truetype");
+}
+ 
+h1 {
+    font-family:"GenghisKhanframed-MedObliq", Arial, Helvetica, sans-serif;
+    font-size: 2em;
+    color:#009922;
+    letter-spacing: 5px;
+    text-align: center;
+}
+h4 {
+font-family:"The Blacklist",'Times New Roman', Times, serif,serif;
+font-size: 2em;
+color: white;
+letter-spacing: 5px;
+background-color: yellowgreen;
+text-shadow: #009922;
+}
+p{
+ font-style: italic;
+}
+span.label {
+    font-weight: bold;
+    color:blue;
+}
+ 
+#normalPrice{
+    text-decoration: line-through;
+    font-style: normal;
+}
+#specialPrice {
+    text-decoration:underline;
+    font-style: normal;
+    color: red;
+}

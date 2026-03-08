@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>JavaScript</title>
+
+<style type="text/css">
+
+span {color:red }
+
+</style>
+
+<script type="text/javascript">
+
+function validate()
+{
+    var id = document.detailsfrm.stud_id.value;
+    var cgpa = document.detailsfrm.stud_cgpa.value;
+    var prog = document.detailsfrm.programme.value;
+
+    var hasError = false;
+
+    if(id == "" || isNaN(id) || id.length != 10){
+        document.getElementById("error_id").innerHTML = "Key in the correct Student ID";
+        hasError = true;
+    }else{document.getElementById("error_id").innerHTML = "";}
+
+    if(cgpa == "" || isNaN(cgpa)){
+        document.getElementById("error_cgpa").innerHTML = "Key in the correct Student CGPA";
+        hasError = true;
+    }else{document.getElementById("error_cgpa").innerHTML = "";}
+
+    if(prog == ""){
+        document.getElementById("error_prog").innerHTML = "Choose a program";
+        hasError = true;
+    }else{document.getElementById("error_prog").innerHTML = ""}
+
+    if(hasError == true){
+        alert("The form has errors");
+    }else{
+        display(id, cgpa, prog);
+    }
+}
+
+function display(id, cgpa, prog){
+    var fullName = "";
+    if(prog == "DIT"){fullName = "Diploma in Information Technology";}
+    else if(prog == "DIA"){fullName = "Diploma in Accounting";}
+    else if(prog == "DET"){fullName = "Diploma in Engineering";}
+
+    var result = "<h3>Student Details</h3>" +
+    "<p>Student ID: " + id + "</p>" +
+    "<p>Student CGPA: " + cgpa + "</p>" +
+    "<p>Student Programme: " + fullName + "</p>";
+
+    document.getElementById("display_area").innerHTML = result;
+}
+
+</script>
+
+</head>
+
+<body>
+
+<form name="detailsfrm">
+
+    <p>Students ID : <input type="text" name="stud_id" maxlength="10" /> <span id="error_id"></span></p>
+    <p>CGPA          : <input type="number" name="stud_cgpa" maxlength="4" /> <span id="error_cgpa"></span></p>
+    <p>Programme : <input type="radio" name="programme" value="DIT" />Information Technology
+                      <input type="radio" name="programme" value="DIA" />Accounting
+                      <input type="radio" name="programme" value="DET" />Engineering
+                       <span id="error_prog"></span>
+    <p><input type="button" name="displaybtn" value="Display Details" onclick="validate();" /></p>
+
+</form>
+
+<div id="display_area"></div>
+
+</body>
+
+</html>

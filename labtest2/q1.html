@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Train Fare Calculator</title>
+</head>
+<body>
+    <h3>Train Ticket Booking</h3>
+
+    <form name="frmTicket">
+        Passenger Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" id="txtPassenger"><br><br>
+
+        Number of Passengers:&nbsp;
+        <input type="number" id="txtCount"><br><br>
+
+        Class Type:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <select id="classType">
+            <option value="Economy">Economy</option>
+            <option value="Business">Business</option>
+            <option value="Premium">Premium</option>
+        </select><br><br>
+
+        Day Type:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="radDay" id="radRegular" checked>
+        <label for="radRegular">Regular</label>
+        <input type="radio" name="radDay" id="radHoliday">
+        <label for="radHoliday">Holiday</label><br><br>
+
+        <button type="button" onclick="calcFare()">Calculate</button>
+    </form>
+
+    <div id="output" style="margin-top:20px;"></div>
+
+    <script>
+        function getClassFare(classType) {
+            let fare = 0.0;
+            switch (classType) {
+                case "Economy":
+                    fare = 30.00;
+                    break;
+                case "Business":
+                    fare = 50.00;
+                    break;
+                case "Premium":
+                    fare = 80.00;
+                    break;
+            }
+            return fare;
+        }
+
+        function calcFare() {
+            var name = document.getElementById("txtPassenger").value;
+            var count = parseInt(document.getElementById("txtCount").value);
+            var classType = document.getElementById("classType").value;
+            var isHoliday = document.getElementById("radHoliday").checked;
+
+            var baseFare = getClassFare(classType);
+            var holidaySurcharge = isHoliday ? 20.00 : 0.00;
+            var totalFare = (count * baseFare) + holidaySurcharge;
+
+            var holidayText = isHoliday ? "Yes" : "No";
+
+            var outputHtml = "Passenger Name: " + name + "<br>" +
+                             "Passengers: " + count + "<br>" +
+                             "Class: " + classType + "<br>" +
+                             "Holiday: " + holidayText + "<br>" +
+                             "Total Fare: RM " + totalFare.toFixed(2);
+
+            document.getElementById("output").innerHTML = outputHtml;
+        }
+    </script>
+</body>
+</html>

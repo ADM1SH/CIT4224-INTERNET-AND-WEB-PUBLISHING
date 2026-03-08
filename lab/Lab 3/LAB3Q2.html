@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Sales Report</title>
+    </head>
+    
+    <body>
+        <h4>Best Sellers</h4>
+        <p>Search reports based on the following criterias.</p>
+        <hr>
+
+        <form action="">
+            <label for="startdate">Start Date :</label>
+            <input type="date" name="startdate" id="startdate">
+            <br>
+            <br>
+            <label for="enddate">End Date :</label>
+            <input type="date" name="enddate" id="enddate">
+            <br>
+            <br>
+            <label for="orderstatus">Order Status :</label>
+            <select name="orderstatusname" id="orderstatus">
+                <option value="1">All</option>
+                <option value="2">Pending</option>
+                <option value="3">Processing</option>
+                <option value="4">Complete</option>
+                <option value="5">Cancelled</option>
+            </select>
+            <br>
+            <br>
+            <label for="paymentstatus">Payment Status :</label>
+            <br>
+            <select name="paymentstatus" id="ps" size="3">
+                <option value="1">Pending</option>
+                <option value="2">Authorised</option>
+                <option value="3">Paid</option>
+                <option value="4">Partially Refunded</option>
+                <option value="5">Refunded</option>
+                <option value="6">Voided</option>
+            </select>
+            <br>
+            <br>
+            <input type="submit" name="submit" id="submit" value="RUN REPORT">
+        </form>
+    </body>
+</html>

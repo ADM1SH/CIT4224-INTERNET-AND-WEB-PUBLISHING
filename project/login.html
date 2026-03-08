@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Login | Cyberjaya Sports Center</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <script src="js/common.js"></script>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-visual user-theme">
+                <div style="background:white; padding:10px; border-radius:10px; margin-bottom:20px;"><img src="images/LogoTopLeft.png" alt="Logo" style="height: 50px; display:block;"></div>
+                <h2>Player Login</h2>
+                <p>Book your favorite courts and track your sports journey.</p>
+                <div style="margin-top: 40px;">
+                    <a href="index.html" style="color: white; text-decoration: none; font-size: 0.9rem;">← Back to Home</a>
+                </div>
+            </div>
+            
+            <div class="login-form-side">
+                <h3>Sign In</h3>
+                <form>
+                    <div class="input-group">
+                        <label>Student / Staff ID</label>
+                        <input type="text" id="user" placeholder="Your ID number" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Password</label>
+                        <input type="password" id="pass" placeholder="••••••••" required>
+                    </div>
+                    
+                    <button type="submit" class="btn-login user-btn">Access My Account</button>
+                    
+                    <div style="margin-top: 30px; text-align: center; font-size: 0.9rem;">
+                        Don't have an account? <a href="register.html" style="color: var(--user-color); font-weight: bold;">Register Now</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 7 - Question 4: Recycling Centre</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        .summary { margin-top: 20px; font-weight: bold; }
+        .customer-block { margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+
+<script type="text/javascript">
+    var totalCustomers = 0;
+    var overallPayout = 0;
+    var outputHTML = "";
+
+    var hasMaterial = confirm("Do you have any material to recycle?");
+
+    while (hasMaterial) {
+        totalCustomers++;
+
+        var weight = parseFloat(prompt("Enter the weight of your materials:"));
+        var rate = 0;
+
+        if (weight < 10) {
+            rate = 0.15;
+        } else if (weight >= 10 && weight < 20) {
+            rate = 0.20;
+        } else if (weight >= 20 && weight < 30) {
+            rate = 0.25;
+        } else {
+            rate = 0.30;
+        }
+
+        var payout = weight * rate;
+        overallPayout += payout;
+
+        outputHTML += "<div class='customer-block'>";
+        outputHTML += "Customer : " + totalCustomers + "<br>";
+        outputHTML += "Weight : " + weight + "kg<br>";
+        outputHTML += "Rate : RM" + rate.toFixed(2) + "<br>";
+        outputHTML += "Payout : RM " + payout.toFixed(2) + "<br>";
+        outputHTML += "</div>";
+
+        hasMaterial = confirm("Do you have any material to recycle?");
+    }
+
+    document.write(outputHTML);
+
+    document.write("<div class='summary'>");
+    document.write("Total Customer : " + totalCustomers + "<br>");
+    document.write("Overall Payout : RM " + overallPayout.toFixed(2));
+    document.write("</div>");
+</script>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 7 - Question 3: Course Payment</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+    </style>
+</head>
+<body>
+
+<script type="text/javascript">
+    var menu = "COURSES OFFERED\n" +
+               "A. Windows Azure (RM 1250.00 per pax)\n" +
+               "B. JQuery for Beginners (RM 990.00 per pax)\n" +
+               "C. Advanced PHP and MySQL (RM 2150.00 per pax)\n\n" +
+               "Enter the COURSE CODE :";
+
+    var courseCode = prompt(menu);
+    courseCode = courseCode.toUpperCase();
+
+    if (courseCode !== "A" && courseCode !== "B" && courseCode !== "C") {
+        alert("You have entered an INVALID Course Code. Program will be terminated....");
+        document.write("<h3>Program Terminated. Invalid Course Code.</h3>");
+    }
+    else {
+        var participants = parseInt(prompt("Enter number of participants :"));
+        var courseName = "";
+        var pricePerPax = 0;
+        var discountRate = 0;
+        var gift = "";
+
+        switch (courseCode) {
+            case "A":
+                courseName = "Windows Azure";
+                pricePerPax = 1250.00;
+                break;
+            case "B":
+                courseName = "JQuery for Beginners";
+                pricePerPax = 990.00;
+                break;
+            case "C":
+                courseName = "Advanced PHP and MySQL";
+                pricePerPax = 2150.00;
+                break;
+        }
+
+        if (participants <= 10) {
+            discountRate = 0;
+            gift = "None";
+        } else if (participants >= 11 && participants <= 20) {
+            discountRate = 0.10;
+            gift = "Coffee Mug";
+        } else {
+            discountRate = 0.15;
+            gift = "Kingston 16GB Thumbdrive";
+        }
+
+        var baseTotal = pricePerPax * participants;
+        var totalDiscount = baseTotal * discountRate;
+        var finalTotal = baseTotal - totalDiscount;
+        var displayDiscount = pricePerPax * discountRate;
+
+        document.write("Course name : " + courseName + "<br>");
+        document.write("Course price : RM " + pricePerPax.toFixed(2) + "<br>");
+        document.write("Participants : " + participants + "<br>");
+        document.write("Discount : RM " + displayDiscount.toFixed(2) + " (" + (discountRate * 100).toFixed(2) + "%)<br>");
+        document.write("Gift : " + gift + "<br>");
+        document.write("Total payment : RM " + finalTotal.toFixed(2));
+    }
+</script>
+
+</body>
+</html>
